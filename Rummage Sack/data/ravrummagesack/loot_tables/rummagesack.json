@@ -37,6 +37,11 @@
                     "text": "Sneak to cycle items for removal.",
                     "color": "gray",
                     "italic": false
+                  },
+                  {
+                      "color": "dark_gray",
+                      "bold": true,
+                      "text": "[Rummage Sack]"
                   }
                 ]
               }

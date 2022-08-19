@@ -1,8 +1,8 @@
-summon item ~ ~ ~ {PickupDelay:1000,Item:{"id":"minecraft:structure_void",Count:1b},Tags:["rav.sackslot0","rav.sacklore"]}
-summon item ~ ~ ~ {PickupDelay:1000,Item:{"id":"minecraft:structure_void",Count:1b},Tags:["rav.sackslot1","rav.sacklore"]}
-summon item ~ ~ ~ {PickupDelay:1000,Item:{"id":"minecraft:structure_void",Count:1b},Tags:["rav.sackslot2","rav.sacklore"]}
-summon item ~ ~ ~ {PickupDelay:1000,Item:{"id":"minecraft:structure_void",Count:1b},Tags:["rav.sackslot3","rav.sacklore"]}
-summon item ~ ~ ~ {PickupDelay:1000,Item:{"id":"minecraft:structure_void",Count:1b},Tags:["rav.sackslot4","rav.sacklore"]}
+summon item ~ ~ ~ {PickupDelay:1000,Item:{"id":"minecraft:structure_void",Count:1b},Tags:["rav.sackslot0","rav.sacklore","smithed.entity","smithed.strict"]}
+summon item ~ ~ ~ {PickupDelay:1000,Item:{"id":"minecraft:structure_void",Count:1b},Tags:["rav.sackslot1","rav.sacklore","smithed.entity","smithed.strict"]}
+summon item ~ ~ ~ {PickupDelay:1000,Item:{"id":"minecraft:structure_void",Count:1b},Tags:["rav.sackslot2","rav.sacklore","smithed.entity","smithed.strict"]}
+summon item ~ ~ ~ {PickupDelay:1000,Item:{"id":"minecraft:structure_void",Count:1b},Tags:["rav.sackslot3","rav.sacklore","smithed.entity","smithed.strict"]}
+summon item ~ ~ ~ {PickupDelay:1000,Item:{"id":"minecraft:structure_void",Count:1b},Tags:["rav.sackslot4","rav.sacklore","smithed.entity","smithed.strict"]}
 data modify entity @e[type=item,limit=1,sort=nearest,tag=rav.sackslot0] Item set from entity @s Inventory[{Slot:-106b}].tag."rav.sackcontents"[0]
 data modify entity @e[type=item,limit=1,sort=nearest,tag=rav.sackslot1] Item set from entity @s Inventory[{Slot:-106b}].tag."rav.sackcontents"[1]
 data modify entity @e[type=item,limit=1,sort=nearest,tag=rav.sackslot2] Item set from entity @s Inventory[{Slot:-106b}].tag."rav.sackcontents"[2]
@@ -22,13 +22,13 @@ execute store success score rav3 rav.rumm_lore run data modify storage rav:rumma
 execute store success score rav4 rav.rumm_lore run data modify storage rav:rummagesack lorecheck4 set value '{"color":"blue","text":""}'
 execute store success score rav5 rav.rumm_lore run data modify storage rav:rummagesack lorecheck5 set value '{"color":"blue","text":""}'
 data modify storage rav:rummagesack loreupdate set from entity @s Inventory[{Slot:-106b}].tag.display.Lore
-execute if score rav1 rav.rumm_lore matches 0 run data remove storage rav:rummagesack loreupdate[4]
-execute if score rav2 rav.rumm_lore matches 0 run data remove storage rav:rummagesack loreupdate[4]
-execute if score rav3 rav.rumm_lore matches 0 run data remove storage rav:rummagesack loreupdate[4]
-execute if score rav4 rav.rumm_lore matches 0 run data remove storage rav:rummagesack loreupdate[4]
-execute if score rav5 rav.rumm_lore matches 0 run data remove storage rav:rummagesack loreupdate[4]
+execute if score rav1 rav.rumm_lore matches 0 run data remove storage rav:rummagesack loreupdate[5]
+execute if score rav2 rav.rumm_lore matches 0 run data remove storage rav:rummagesack loreupdate[5]
+execute if score rav3 rav.rumm_lore matches 0 run data remove storage rav:rummagesack loreupdate[5]
+execute if score rav4 rav.rumm_lore matches 0 run data remove storage rav:rummagesack loreupdate[5]
+execute if score rav5 rav.rumm_lore matches 0 run data remove storage rav:rummagesack loreupdate[5]
 # If no item lore to display, remove item label
-execute unless data storage rav:rummagesack loreupdate[4] run data remove storage rav:rummagesack loreupdate[3]
+execute unless data storage rav:rummagesack loreupdate[5] run data remove storage rav:rummagesack loreupdate[4]
 # Write stored lore to item
 item modify entity @s weapon.offhand ravrummagesack:loretruncate
 

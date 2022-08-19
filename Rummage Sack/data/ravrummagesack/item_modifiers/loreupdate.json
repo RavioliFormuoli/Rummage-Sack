@@ -19,6 +19,11 @@
           "italic": false
         },
         {
+            "color": "dark_gray",
+            "bold": true,
+            "text": "[Rummage Sack]"
+        },
+        {
           "text": "Items:",
           "color": "blue",
           "italic": false

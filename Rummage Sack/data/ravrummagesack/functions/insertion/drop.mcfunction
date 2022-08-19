@@ -1,5 +1,5 @@
-summon minecraft:armor_stand ~ ~ ~ {Marker:1b,Invisible:1b,Tags:["rav.rummban","global.ignore","global.ignore.kill"]}
-tag @e[type=item,limit=1,sort=nearest,tag=!rav.rummdrop,tag=!global.ignore,tag=!global.ignore.kill,distance=..4,nbt=!{Item:{tag:{rav.rummage:"sack"}}}] add rav.rummdrop
+summon minecraft:armor_stand ~ ~ ~ {Marker:1b,Invisible:1b,Tags:["rav.rummban","global.ignore","global.ignore.kill","smithed.entity","smithed.strict"]}
+tag @e[type=item,limit=1,sort=nearest,tag=!rav.rummdrop,tag=!smithed.entity,distance=..4,nbt=!{Item:{tag:{rav.rummage:"sack"}}}] add rav.rummdrop
 data modify storage rav:rummagesack Item set from entity @e[type=item,sort=nearest,limit=1,tag=rav.rummdrop] Item
 data modify entity @e[type=minecraft:armor_stand,limit=1,sort=nearest,tag=rav.rummban] HandItems[0] set from entity @e[type=item,sort=nearest,limit=1,tag=rav.rummdrop] Item
 execute as @e[type=minecraft:armor_stand,limit=1,sort=nearest,tag=rav.rummban] if predicate ravrummagesack:itemban run scoreboard players set ban rav.rumm_drop 1
